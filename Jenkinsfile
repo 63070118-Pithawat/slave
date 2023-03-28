@@ -2,22 +2,20 @@ pipeline {
     agent any
 
     parameters {
-        string(name: 'REACT_APP_IMAGE', defaultValue: '', description: 'react app images')
-        choice(name: 'PYTHON_APP_IMAGE', defaultValue: '', description: 'python server app')
+        string(name: 'BUILD_NUMBER', defaultValue: '', description: 'react app images')
     }
 
     stages { 
         stage("Initialization") { 
             steps {
-                echo "This is react image: ${REACT_APP_IMAGE}"
-                echo "This is python image: ${PYTHON_APP_IMAGE}"
+                echo "This is bulidTime: ${params.BUILD_NUMBER}"
             }
         }
 
         stage("Pull-Image") {
             steps {
-                sh "docker pull ${PYTHON_APP_IMAGE}"
-                sh "docker pull ${PYTHON_APP_IMAGE}"
+                sh "docker pull pithawatnuckong/python-server"
+                sh "docker pull pithawatnuckong/react-web"
             }
         }
 
