@@ -21,7 +21,7 @@ pipeline {
 
         stage("Run-Images"){
             steps { 
-                sh "echo docker images"
+                sh "docker images"
             }
         }
     }
