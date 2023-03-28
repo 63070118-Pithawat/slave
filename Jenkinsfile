@@ -14,8 +14,8 @@ pipeline {
 
         stage("Pull-Image") {
             steps {
-                sh "docker pull pithawatnuckong/python-server"
-                sh "docker pull pithawatnuckong/react-web"
+                sh "docker pull -t pithawatnuckong/python-server:latest pithawatnuckong/python-server"
+                sh "docker pull -t pithawatnuckong/react-web:latest pithawatnuckong/react-web"
             }
         }
 
