@@ -9,6 +9,7 @@ pipeline {
         stage("Initialization") { 
             steps {
                 echo "This is bulidTime: ${params.BUILD_NUMBER}"
+                echo "docker rmi $(docker images -q)"
             }
         }
 
