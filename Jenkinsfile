@@ -6,11 +6,6 @@ pipeline {
     }
 
     stages { 
-        stage("Initialization") { 
-            steps {
-            }
-        }
-
         stage("Pull-Image") {
             steps {
                 sh "docker pull pithawatnuckong/python-server"
