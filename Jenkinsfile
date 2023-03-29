@@ -8,9 +8,6 @@ pipeline {
     stages { 
         stage("Initialization") { 
             steps {
-                echo "This is bulidTime: ${params.BUILD_NUMBER}"
-                sh "docker stop echo ${docker ps -a -q} && docker rm echo ${docker ps -a -q}"
-                sh "docker rmi echo ${docker images -q}"
             }
         }
 
@@ -23,7 +20,6 @@ pipeline {
 
         stage("Run-Images"){
             steps { 
-                sh "echo ${docker images}"
                 sh "docker images"
             }
         }
